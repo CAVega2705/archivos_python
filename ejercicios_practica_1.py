@@ -19,6 +19,7 @@ def ej1():
     
     # stock = ....
 
+
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
@@ -32,7 +33,9 @@ def ej1():
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-
+    stock = {}
+    stock = {'tornillos': '100', 'tuercas': '150', 'arandelas': '300'}
+    print(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -40,7 +43,7 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
@@ -66,6 +69,24 @@ def ej2():
     # imprimir en pantalla con print el diccionario con el stock final
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    while True:
+        print('Seleccione el producto (tornillos, tuercas, arandelas) que desea modificar escribiendolo a continuación o fin para concluir la operación:')
+        elemento = str(input())
+        if elemento == 'fin':
+            break
+        elif elemento in stock:
+            print('Ingrese la cantidad de elementos que desea sumar al stock:')
+            cantidad = int(input())
+            if elemento == 'arandelas':
+                stock ['arandelas'] += cantidad
+            elif elemento == 'tornillos':
+                stock ['tornillos'] += cantidad
+            elif elemento == 'tuercas':
+                stock ['tuercas'] += cantidad
+        else:
+            print('El elemento ingresado es incorrecto, por favor ingreselo nuevamente.')
+
+    print('el stock ingresado es: {}'.format(stock))
 
 
 if __name__ == '__main__':
